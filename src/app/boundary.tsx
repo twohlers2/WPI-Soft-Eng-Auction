@@ -36,7 +36,7 @@ function ToAuctionItems({model, andRefreshDisplay, callbacks}: {model: Model; an
           <p><b>Initial bid: </b><input id="new-item-price" placeholder="Initial bid price"></input></p>
           <p><b>Description: </b><input id="new-item-description" placeholder="Item description"></input></p>
           <div className="spacer"></div>
-          <button onClick={() => {addItem()}}>Add Item</button>
+          <button data-testid="add-item-button" onClick={() => {addItem()}}>Add Item</button>
           <div className="spacer"></div>
           <ul>
             {itemsAvailable.map((item: Item) => (
@@ -94,8 +94,8 @@ function CurrentItem({model, andRefreshDisplay, callbacks}: {model: Model; andRe
             {model.auctionStarted && !model.currentItem && <b>No item selected.</b>}
           </p>
           <div className="spacer"></div>
-          <p><button onClick={() => {nextItem()}}>Auction Next Item</button></p>
-          <p><button onClick={() => {sellItem()}}>Sell Item</button></p>
+          <p><button data-testid="auction-next-item-button" onClick={() => {nextItem()}}>Auction Next Item</button></p>
+          <p><button data-testid="sell-item-button" onClick={() => {sellItem()}}>Sell Item</button></p>
         </div>
     )
 }
@@ -130,7 +130,7 @@ function Bidding({model, andRefreshDisplay, callbacks}: {model: Model; andRefres
            <div className="spacer"></div>
            <p><b>Name: </b><input id="bidder-name" placeholder="Bidder name"></input></p>
            <p><b>Amount: </b><input id="bid-amount" placeholder="Bid amount"></input></p>
-           <button onClick={() => {addBid()}}>Place Bid</button>
+           <button data-testid="place-bid-button" onClick={() => {addBid()}}>Place Bid</button>
            <div className="spacer"></div>
         <ul>
           {bids.map((bid: Bid) => (
@@ -175,7 +175,7 @@ function CloseAuction({model, andRefreshDisplay, callbacks}: {model: Model; andR
     }
 
     return (
-      <button onClick={() => {close()}}>Close auction</button>
+      <button data-testid="close-auction-button" onClick={() => {close()}}>Close auction</button>
     )
 }
 
