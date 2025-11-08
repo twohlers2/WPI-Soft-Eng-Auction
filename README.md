@@ -1,3 +1,5 @@
+# Information
+
 BidMaster application for WPI CS3733 Software Engineering individual project.
 
 # Installation
@@ -17,6 +19,3 @@ pnpm dev
 # or
 bun dev
 ```
-
-## Note Next week Code Coverage and testing
-
